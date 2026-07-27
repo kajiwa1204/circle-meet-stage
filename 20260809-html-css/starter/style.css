@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+/* =========================================
+  全体の設定
+========================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif;
+  line-height: 1.8;
+  color: #333333;
+  background-color: #fbfaf7;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: #2e7d6b;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* =========================================
+  ヘッダー（一番上の自己紹介エリア）
+========================================= */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #e8f0ed;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%; /* 正方形の画像を丸く切り抜く */
+  object-fit: cover; /* 縦横比を保ったままトリミング */
+}
+
+.hero h1 {
+  margin: 16px 0 4px;
+  font-size: 32px;
+}
+
+.tagline {
+  margin: 0;
+  color: #777777;
+}
+
+/* =========================================
+  本文の共通レイアウト
+========================================= */
+.container {
+  max-width: 720px; /* 広がりすぎを防ぐ */
+  margin: 0 auto; /* 左右autoで中央寄せ */
+  padding: 0 20px;
+}
+
+.section {
+  margin-top: 56px;
+}
+
+.section h2 {
+  padding-bottom: 8px;
+  border-bottom: 2px solid #2e7d6b;
+  font-size: 22px;
+}
+
+/* =========================================
+  Skills（タグを横並びにする）
+========================================= */
+.tags {
+  display: flex; /* 中身を横並びに */
+  flex-wrap: wrap; /* 入り切らなければ折り返す */
+  gap: 10px; /* すき間 */
+  margin: 0;
+  padding: 0;
+  list-style: none; /* 「・」を消す */
+}
+
+.tags li {
+  padding: 6px 14px;
+  border-radius: 999px; /* 端を完全な半円に */
+  background-color: #e8f0ed;
+  font-size: 14px;
+}
+
+/* =========================================
+  Works（カード）
+========================================= */
+.works {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.works li {
+  margin-bottom: 16px;
+  padding: 20px;
+  border: 1px solid #e2e0da;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.works h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.works p {
+  margin: 0;
+  color: #666666;
+}
+
+/* =========================================
+  Links
+========================================= */
+.links {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+/* =========================================
+  フッター
+========================================= */
+.footer {
+  margin-top: 80px;
+  padding: 24px;
+  text-align: center;
+  color: #999999;
+  font-size: 14px;
+}
+
+/* =========================================
+  スマホ向けの調整
+========================================= */
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+}

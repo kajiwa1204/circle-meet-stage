@@ -1,0 +1,10 @@
+node_modules/
+dist/
+_site/
+.DS_Store
+*.local
+.claude/
+
+# Slidev の生成物
+.remote-assets/
+components.d.ts

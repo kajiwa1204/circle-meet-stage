@@ -1,0 +1,65 @@
+name: Deploy pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "20260809-html-css/**"
+      - ".github/pages/**"
+      - ".github/workflows/deploy.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: 20260809-html-css/pnpm-lock.yaml
+
+      - name: Install deps
+        working-directory: 20260809-html-css
+        run: pnpm install --frozen-lockfile
+
+      - name: Build slides
+        working-directory: 20260809-html-css
+        run: pnpm build --base /circle-meet-stage/20260809-html-css/
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site/20260809-html-css
+          cp -R 20260809-html-css/dist/. _site/20260809-html-css/
+          cp -R .github/pages/. _site/
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

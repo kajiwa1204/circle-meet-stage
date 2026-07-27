@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#dceae5"/>
+  <!-- 体 -->
+  <path d="M60 400 v-30 c0 -75 63 -125 140 -125 s140 50 140 125 v30 z" fill="#2e7d6b"/>
+  <!-- 首 -->
+  <rect x="180" y="210" width="40" height="55" rx="20" fill="#e8b691"/>
+  <!-- 髪（後ろ） -->
+  <ellipse cx="200" cy="158" rx="80" ry="82" fill="#463a33"/>
+  <!-- 顔 -->
+  <circle cx="200" cy="178" r="68" fill="#f5cba9"/>
+  <!-- 目 -->
+  <circle cx="178" cy="176" r="6" fill="#463a33"/>
+  <circle cx="222" cy="176" r="6" fill="#463a33"/>
+  <!-- 口 -->
+  <path d="M186 202 q14 12 28 0" stroke="#463a33" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>

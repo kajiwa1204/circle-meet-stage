@@ -1,0 +1,27 @@
+/* =========================================================
+  本文中に置くアイコン（codicon / mdi）
+  codicon・mdi ともに -0.1em で中心が一致する。
+========================================================= */
+.inline-icon {
+  vertical-align: -0.1em;
+}
+
+/* =========================================================
+  スライドの背景
+  投影時に帯（バンディング）が出ないよう、コントラストは意図的に低め。
+========================================================= */
+.slidev-slide-content {
+  background:
+    radial-gradient(rgba(255, 255, 255, 0.022) 0.5px, transparent 0.5px) 0 0 / 5px 5px,
+    radial-gradient(ellipse 70% 55% at 74% 12%, rgba(46, 125, 107, 0.11), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 96%, rgba(46, 125, 107, 0.07), transparent 55%),
+    linear-gradient(168deg, #17191b 0%, #121314 46%, #0e1010 100%);
+}
+
+html:not(.dark) .slidev-slide-content {
+  background:
+    radial-gradient(rgba(40, 36, 30, 0.03) 0.5px, transparent 0.5px) 0 0 / 5px 5px,
+    radial-gradient(ellipse 70% 55% at 74% 12%, rgba(46, 125, 107, 0.07), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 96%, rgba(46, 125, 107, 0.05), transparent 55%),
+    linear-gradient(168deg, #fcfbf8 0%, #ffffff 46%, #f4f2ed 100%);
+}

@@ -1,0 +1,3 @@
+[submodule "20260705-git-github"]
+	path = 20260705-git-github
+	url = git@github.com:petaxa/circle-git-intro.git
